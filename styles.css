@@ -1,0 +1,53 @@
+/* Aesthetic Background */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    background: linear-gradient(to bottom right, #ffe4e1, #fadadd, #fff0f5);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Background Floating Shapes */
+body::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 192, 203, 0.6) 20%, transparent 60%) 0 0,
+                radial-gradient(circle, rgba(255, 182, 193, 0.4) 20%, transparent 60%) 50px 50px,
+                radial-gradient(circle, rgba(240, 128, 128, 0.5) 20%, transparent 60%) 100px 100px;
+    background-size: 300px 300px;
+    animation: floatShapes 10s infinite linear;
+    z-index: -1;
+}
+
+/* Aesthetic Glow */
+body::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(255, 240, 245, 0.5), rgba(255, 228, 225, 0));
+    mix-blend-mode: screen;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Keyframe Animations */
+@keyframes floatShapes {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-50px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
